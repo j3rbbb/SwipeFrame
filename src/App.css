@@ -1,0 +1,76 @@
+/* AI Button Glow Pulse Animation */
+@keyframes aiGlowPulse {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(124, 58, 237, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(124, 58, 237, 0.4);
+  }
+}
+
+.ai-button-glow {
+  position: relative;
+  animation: aiGlowPulse 2s ease-in-out infinite;
+}
+
+.ai-button-glow:hover {
+  animation: aiGlowPulse 1s ease-in-out infinite;
+  filter: brightness(1.1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2A2A32;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3A3A42;
+}
+
+/* Selection Color */
+::selection {
+  background-color: rgba(124, 58, 237, 0.3);
+  color: #FFFFFF;
+}
+
+/* Focus Visible */
+:focus-visible {
+  outline: 2px solid #7C3AED;
+  outline-offset: 2px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .ai-button-glow {
+    animation: none;
+  }
+}
+
+/* Export host: off-screen at rest, fully visible only while capturing (never opacity:0) */
+.export-slides-host {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(-200vw);
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+  visibility: visible;
+  opacity: 1;
+}
+
+.export-slides-host--capturing {
+  transform: none;
+  z-index: 1;
+  overflow: visible;
+}
